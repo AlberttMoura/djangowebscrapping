@@ -5,3 +5,12 @@
 idea
 'idea'
 .gitignore.txt
+# Default ignored files
+/.idea/shelf/
+/.idea/workspace.xml
+/.idea/vcs.xml
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/djangowebscrapping.iml
+/.idea/inspectionProfiles/profiles_settings.xml
+
