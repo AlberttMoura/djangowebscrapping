@@ -17,9 +17,28 @@
         </div>
         <div class="nav-menu">
             <a href="/">HOME</a>
-            <a href="/">ABOUT</a>
+            <a href="/new_search">ABOUT</a>
             <a href="/">FAQ</a>
         </div>
     </nav>
+    <main>
+        <div class="search">
+            <form action="{% url 'new_search' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="What is on your mind today?" autocomplete="off">
+                <input type="submit" name="search_button" value="Search">
+            </form>
+        </div>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <div class="bottom-left">
+            <p>DjangoWebScrapping&reg; 2020</p>
+        </div>
+        <div class="bottom-right">
+            <p>Contact: DjangoWebScrapping@e-mail.com</p>
+        </div>
+    </footer>
 </body>
 </html>

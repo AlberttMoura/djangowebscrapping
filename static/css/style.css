@@ -14,23 +14,31 @@
     font-family: 'Open Sans', 'Arial';
 }
 
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 13vh 79vh 8vh;
+    grid-template-areas: 'n n n n n' 
+                         'm m m m m'
+                         'f f f f f';
+}
+
 .navbar {
     display: flex;
     background-color: #5E2AC4;
     padding: 15px;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 2px #14151F solid;
+    grid-area: n;
 }
 
 .nav-logo {
     font-size: 30px;
     margin-left: 50px;
-    text-align: center;
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
     margin-right: 50px;
 }
 
@@ -54,4 +62,75 @@
     color: #14151F;
     background-color: #9975DF;
 
+}
+
+main {
+    grid-area: m;
+}
+
+
+.search > form{
+    margin-top: 60px;
+    display: grid;
+    justify-items: center;
+}
+
+.search > form > input[type="text"] {
+    width: 50vw;
+    height: 5vw;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-size: 2.2vw;
+    border-radius: 50px;
+    border: 1px gray solid;
+    transition: 0.5s;
+    outline: none;
+}
+
+.search > form > input[type="text"]:focus {
+    width: 55vw;
+    height: 6vw;
+    font-size: 2.5vw;
+}
+
+.search > form > input[type="submit"] {
+    margin-top: max(3vh,10px);
+
+    height: 6vh;
+    border-radius: 40px;
+    font-size: 1.2vw;
+    font-family: 'Oswald';
+    border: 0px;
+    background-color: #8F73E5;
+    width: 10vw;
+    transition: height 0.3s, width 0.3s;
+}
+
+.search > form > input[type="submit"]:hover {
+    border: 2px #4A4A4A solid;
+    height: 6.5vh;
+    width: 11vw;
+}
+
+footer {
+    grid-area: f;
+    background-color:  #14151F;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Open Sans';
+}
+
+.card {
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}
+
+.card-image {
+    height: 250px; /* Your height here */
+    overflow: hidden;
 }

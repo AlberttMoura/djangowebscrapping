@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+{% block content %}
+    {{search}}
+    <div>
+        {% for post in final_posting %}
+            <div class="row">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="/"><img src="" alt="Imagem"></a>
+                        {{post}}
+                    </div>
+                    <div class="card-content">
+
+                    </div>
+                    <div class="card-action">
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
