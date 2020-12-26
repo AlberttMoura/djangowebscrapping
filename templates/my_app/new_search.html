@@ -1,22 +1,21 @@
-{% extends '../base.html' %}
+{% extends 'base.html' %}
+
 {% block content %}
-    {{search}}
-    <div>
-        {% for post in final_posting %}
-            <div class="row">
+    <h2 style="text-align: center">{{ search | title }}</h2>
+
+    <div class="cards">
+        {% for post in final_postings %}
                 <div class="card">
                     <div class="card-image">
-                        <a href="/"><img src="" alt="Imagem"></a>
-                        {{post}}
+                        <a href="{{ post.1 }}"><img src="{{ post.3 }}" alt=""></a>
                     </div>
                     <div class="card-content">
-
+                        <p>{{ post.0 }}</p>
                     </div>
                     <div class="card-action">
-
+                        <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
                     </div>
                 </div>
-            </div>
         {% endfor %}
     </div>
 {% endblock content %}

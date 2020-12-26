@@ -16,11 +16,11 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 13vh 79vh 8vh;
-    grid-template-areas: 'n n n n n' 
-                         'm m m m m'
-                         'f f f f f';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 13vh 1fr 8vh;
+    grid-template-areas: 'n n n n n n n' 
+                         '. m m m m m .'
+                         'f f f f f f f';
 }
 
 .navbar {
@@ -66,6 +66,8 @@ body {
 
 main {
     grid-area: m;
+    min-height: 79vh;
+    max-height: 100%;
 }
 
 
@@ -96,7 +98,6 @@ main {
 
 .search > form > input[type="submit"] {
     margin-top: max(3vh,10px);
-
     height: 6vh;
     border-radius: 40px;
     font-size: 1.2vw;
@@ -104,6 +105,7 @@ main {
     border: 0px;
     background-color: #8F73E5;
     width: 10vw;
+    outline: none;
     transition: height 0.3s, width 0.3s;
 }
 
@@ -126,11 +128,45 @@ footer {
 }
 
 .card {
-    height: 400px; /* Your height here */
     overflow: hidden;
+    margin: 10px;
+    margin-bottom: 25px;
+    border: 1px gray solid;
+    border-radius: 50px;
+    transition: margin 0.5s;
+    transition: background-color 0.6s;
 }
 
-.card-image {
-    height: 250px; /* Your height here */
+.card:hover {
+    background-color: #EAA9FF;
+}
+
+.card-content {
+    font-size: max(17px, 1vw);
+    text-align: center;
+}
+
+.card-action {
+    font-size: max(17px, 1vw);
+    text-align: center;
+}
+
+.card-action a {
+    text-decoration: none;
+    color: indigo;
+    font-weight: 600;
+}
+
+.card-image img {
+    height: 200px;
+    width: 100%;
+    justify-self: center;
     overflow: hidden;
+    border-radius: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: '1fr 1fr 1fr';
+    grid-template-areas: 'c c c';
 }
