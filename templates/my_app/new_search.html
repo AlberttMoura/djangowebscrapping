@@ -3,6 +3,7 @@
 {% block content %}
     <h2 style="text-align: center">{{ search | title }}</h2>
 
+    {% if final_postings %}
     <div class="cards">
         {% for post in final_postings %}
                 <div class="card">
@@ -13,9 +14,12 @@
                         <p>{{ post.0 }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ post.1 }}">View listing: Price {{ post.2 }}</a>
+                        <a href="{{ post.1 }}">Price {{ post.2 }}</a>
                     </div>
                 </div>
         {% endfor %}
     </div>
+    {% else %}
+        <h1 style="text-align: center; margin-top: 20px;">No results found</h1>
+    {% endif %}
 {% endblock content %}

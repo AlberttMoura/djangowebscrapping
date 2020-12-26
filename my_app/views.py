@@ -13,7 +13,7 @@ def new_search(request):
     search = request.POST.get('search').strip()
     final_search = '+'.join(search.split())
     models.Search.objects.create(search=search)
-    final_url = BASE_CRAIGSLIST_URL.format(search)
+    final_url = BASE_CRAIGSLIST_URL.format(final_search)
     response = requests.get(final_url)
     data = response.text
     soup = BeautifulSoup(data, features='html.parser')

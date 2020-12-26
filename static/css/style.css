@@ -115,6 +115,13 @@ main {
     width: 11vw;
 }
 
+
+.search > form > input[type="submit"]:focus {
+    border: 2px #4A4A4A solid;
+    height: 6.5vh;
+    width: 11vw;
+}
+
 footer {
     grid-area: f;
     background-color:  #14151F;
@@ -142,8 +149,9 @@ footer {
 }
 
 .card-content {
-    font-size: max(17px, 1vw);
+    font-size: max(16px, 1vw);
     text-align: center;
+    font-weight: 600;
 }
 
 .card-action {
@@ -160,6 +168,7 @@ footer {
 .card-image img {
     height: 200px;
     width: 100%;
+    outline: none;
     justify-self: center;
     overflow: hidden;
     border-radius: 40px;
