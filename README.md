@@ -1,3 +1,3 @@
 # Django web scraper
 
-Creating a Django-based website for web scrapping.
+Creating a Django-based application for web scrapping.
